@@ -4,7 +4,7 @@ import ProductCard from './components/ProductCard';
 
 const App = () => {
   let productList = [
-    {
+    { 
       image: "https://media.allonline.7eleven.co.th/pdmain/669960-01-allonline-sm.jpg",
       price: 32,
       name: "Lays",
@@ -82,25 +82,25 @@ const App = () => {
       name: "Pringles Original",
       Description: "พริงเกิลส์ มันฝรั่งทอดกรอบ รสดั้งเดิม 107 กรัม ขนมขบเคี้ยวที่ให้รสชาติกรอบอร่อยและหอมมันในทุกคำ เหมาะสำหรับการแบ่งปันกับเพื่อนๆ",
     },
-    {
+    { 
       image: "https://www.shopping-d.com/cdn/shop/products/BetagenDrinkingYogurtAssortedFlavoured85ml_Packof6Bottle_18000.png?v=1636951595",
       price: 99,
       name: "Betagen Drink",
       Description: "เบต้ากลิน นมเปรี้ยว 2 ลิตร เครื่องดื่มที่อุดมด้วยจุลินทรีย์แลคโตบาซิลลัส ช่วยเสริมสร้างสุขภาพทางเดินอาหารและเพิ่มความสดชื่น",
     },
-    {
+    { 
       image: "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg",
       price: 45,
-      name: "https://m.media-amazon.com/images/I/51v8nyxSOYL._SL1500_.jpg",
+      name: "Cocacola",
       Description: "โค้ก น้ำอัดลมรสโคล่า ขนาด 1.5 ลิตร น้ำอัดลมที่ครองใจคนทั่วโลกมานาน เหมาะสำหรับการเติมความสดชื่นในทุกโอกาส",
     },
-    {
+    { 
       image: "https://www.instacart.com/assets/domains/product-image/file/large_68c12bc8-9847-47df-8792-9555e81b83e4.jpg",
       price: 150,
       name: "Hershey's Chocolate Syrup",
       Description: "เฮอร์ชีส์ ช็อกโกแลตไซรัป 680 กรัม เหมาะสำหรับการเพิ่มรสชาติให้กับเครื่องดื่ม ไอศกรีม หรือขนมหวานที่คุณชื่นชอบ",
     },
-    {
+    { 
       image: "https://pictures.grocerapps.com/original/grocerapp-cremo-24-ticky-piece-5fc09bcb736de.jpeg",
       price: 25,
       name: "Cremo Sandwich Biscuits",
@@ -112,31 +112,59 @@ const App = () => {
       name: "Lactasoy",
       Description: "แลคตาซอย นมถั่วเหลืองรสจืด ขนาด 300 มล. อุดมด้วยโปรตีนและสารอาหารที่เหมาะกับคนรักสุขภาพ",
     },
-    {
+    { 
       image: "https://kellogg-h.assetsadobe.com/is/image/content/dam/kelloggs/kna/us/digital-shelf/cheez-it/00024100789436_C1L1.jpg",
       price: 110,
       name: "Cheez-It Crackers",
       Description: "ชีสอิท แครกเกอร์อบกรอบ รสเชดดาร์ชีส 200 กรัม ขนมที่ให้รสชีสเต็มคำ เหมาะสำหรับทุกช่วงเวลาของวัน",
     },
-    {
+    { 
       image: "https://assets.tops.co.th/LIPTON-LiptonIceTeaLemon245mlPack6-8858998575015-1",
       price: 140,
       name: "Lipton Ice Tea",
       Description: "ลิปตัน ไอซ์ที รสมะนาว ขนาด 1.25 ลิตร ชารสชาติกลมกล่อมและสดชื่น เติมพลังงานให้วันของคุณ",
     },
   ];
-  
-  const handleButton = () =>{
+
+  const handleButton = () => {
     alert("!!!");
   }
   return (
-    <div>
-      {
-        productList.map((item,index)=><ProductCard key={index} productList={item}/>)
-      }
-      
-    </div>
+    <>
+      <div style={{ display: 'flex', gap: '1rem', overflowX: 'auto', padding: '1rem', flexDirection: 'row' }}>
+        {
+          productList.slice(0, 5).map((item, index) => (
+            <ProductCard key={index} productList={item} />
+          ))
+        }
+      </div>
+  
+      <div style={{ display: 'flex', gap: '1rem', overflowX: 'auto', padding: '1rem', flexDirection: 'row' }}>
+        {
+          productList.slice(5, 10).map((item, index) => (
+            <ProductCard key={index + 4} productList={item} />
+          ))
+        }
+      </div>
+
+      <div style={{ display: 'flex', gap: '1rem', overflowX: 'auto', padding: '1rem', flexDirection: 'row' }}>
+        {
+          productList.slice(10, 15).map((item, index) => (
+            <ProductCard key={index + 4} productList={item} />
+          ))
+        }
+      </div>
+
+      <div style={{ display: 'flex', gap: '1rem', overflowX: 'auto', padding: '1rem', flexDirection: 'row' }}>
+        {
+          productList.slice(15, 20).map((item, index) => (
+            <ProductCard key={index + 4} productList={item} />
+          ))
+        }
+      </div>
+    </>
   )
+  
 }
 
 export default App

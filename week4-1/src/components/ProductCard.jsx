@@ -10,7 +10,7 @@ const ProductCard = (props) => {
         className="card-img-top"
         src={props.productList.image}
         alt="Product"
-        style={{ height: '12rem', objectFit: 'cover' }}
+        style={{ height: '15rem', objectFit: 'cover' }}
       />
       <div className="card-body" style={{ padding: '1rem' }}>
         <h5 className="card-title" style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>
@@ -26,7 +26,7 @@ const ProductCard = (props) => {
           className="card-text"
           style={{ fontWeight: 'bold', color: '#4caf50', fontSize: '1.1rem' }}
         >
-          ${props.productList.price}
+          {props.productList.price} บาท
         </p>
       </div>
     </div>
